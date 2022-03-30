@@ -1,10 +1,14 @@
-function lcm(num1, num2) {
-    if (num1 > num2) {
-        let big = num1;
-        let small = num2;
-        for (let i = big; i < big * small; i++) {
+function lcm() {
+    let num1 = document.querySelector("#num1");
+    let num2 = document.querySelector("#num2");
+    let value = document.querySelector("#value");
+
+    if (num1.value > num2.value) {
+        let big = num1.value;
+        let small = num2.value;
+        for (let i = big; i <= big * small; i++) {
             if (i % big == 0 && i % small == 0) {
-                console.log(i);
+                value.innerHTML = i;
                 break;
             }
             else {
@@ -12,12 +16,12 @@ function lcm(num1, num2) {
             }
         }
     }
-    else if (num1 < num2) {
-        let small = num1;
-        let big = num2;
-        for (let i = big; i < big * small; i++) {
+    else if (num1.value < num2.value) {
+        let small = num1.value;
+        let big = num2.value;
+        for (let i = big; i <= big * small; i++) {
             if (i % big == 0 && i % small == 0) {
-                console.log(i);
+                value.innerHTML = i;
                 break;
             }
             else {
@@ -25,7 +29,7 @@ function lcm(num1, num2) {
             }
         }
     }
-    else if (num1 == num2) {
-        console.log(num1);
+    else if (num1.value == num2.value) {
+        value.innerHTML = num1.value;
     }
 }
